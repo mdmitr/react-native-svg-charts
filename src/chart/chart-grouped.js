@@ -43,6 +43,7 @@ class ChartGrouped extends PureComponent {
             clampY,
             svg,
             children,
+	    key
         } = this.props
 
         const { width, height } = this.state
@@ -110,7 +111,7 @@ class ChartGrouped extends PureComponent {
                                 const { svg: pathSvg } = data[index]
                                 return (
                                     <Path
-                                        key={path}
+                                        key={"" + index + key}
                                         fill={'none'}
                                         {...svg}
                                         {...pathSvg}
